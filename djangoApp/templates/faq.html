@@ -1,0 +1,96 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>FAQ - Grocery Delivery</title>
+    <link rel="stylesheet" href="{% static 'css/faq.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Frequently Asked Questions</h1>
+        <p>Here are some of the most common questions we receive about our grocery delivery service.</p>
+    </header>
+
+    <main>
+        <section class="faq-section">
+            <h2>General Questions</h2>
+            
+            <div class="faq-item">
+                <button class="faq-question">How do I place an order?</button>
+                <div class="faq-answer">
+                    <p>To place an order, simply browse our selection of groceries, add your items to the cart, and proceed to checkout. You can enter your delivery information and payment details before completing the order.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <button class="faq-question">What areas do you deliver to?</button>
+                <div class="faq-answer">
+                    <p>We deliver to most areas within LA. Enter your delivery address during checkout to check if we deliver to your location.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <button class="faq-question">What payment methods do you accept?</button>
+                <div class="faq-answer">
+                    <p>We accept major credit and debit cards, as well as PayPal. All payments are processed securely.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">How can I track my order?</button>
+                <div class="faq-answer">
+                    <p>Once your order is dispatched, you will receive a tracking number via email or SMS. Use the tracking number on our website to check the status of your delivery.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="faq-section">
+            <h2>Delivery Questions</h2>
+
+            <div class="faq-item">
+                <button class="faq-question">What time will my groceries arrive?</button>
+                <div class="faq-answer">
+                    <p>Your delivery window will be provided during checkout. We offer a range of time slots, and you can choose the most convenient time for you.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <button class="faq-question">What if I'm not home during delivery?</button>
+                <div class="faq-answer">
+                    <p>If you are not home at the time of delivery, we will leave your groceries in a safe place, or we can arrange a re-delivery based on your availability.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <button class="faq-question">Do you charge delivery fees?</button>
+                <div class="faq-answer">
+                    <p>We offer free delivery for orders over a certain amount. Otherwise, a small delivery fee will apply based on your location.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        const faqQuestions = document.querySelectorAll('.faq-question');
+
+        faqQuestions.forEach(button => {
+            button.addEventListener('click', function() {
+                const answer = this.nextElementSibling;
+                if (answer.style.display === 'block') {
+                    answer.style.display = 'none';
+                } else {
+                    answer.style.display = 'block';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+
+{% endblock %}

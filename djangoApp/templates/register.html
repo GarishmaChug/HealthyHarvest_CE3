@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            height: 100vh;
+            background: url('https://images.pexels.com/photos/8939504/pexels-photo-8939504.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2') no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(4px);
+            z-index: 1;
+        }
+
+        .contain {
+            position: relative;
+            z-index: 2;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 12px;
+            padding: 40px 30px;
+            width: 350px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            animation: fadeIn 0.7s ease;
+            text-align: center;
+        }
+
+        .contain h2 {
+            margin-bottom: 25px;
+            color: #2f2f2f;
+            font-size: 28px;
+            letter-spacing: 1px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .text3 {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 14px;
+            box-sizing: border-box;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+
+        .text3:focus {
+            border-color: #28a745;
+            outline: none;
+            box-shadow: 0 0 6px rgba(40, 167, 69, 0.2);
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        .contain a {
+            display: inline-block;
+            margin-top: 16px;
+            color: #146902;
+            font-size: 14px;
+            text-decoration: none;
+        }
+
+        .contain a:hover {
+            text-decoration: underline;
+        }
+
+        .error-messages {
+            background: rgba(255, 0, 0, 0.1);
+            border-left: 4px solid #dc3545;
+            color: #dc3545;
+            margin-bottom: 20px;
+            padding: 10px 15px;
+            border-radius: 6px;
+            text-align: left;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <div class="overlay"></div>
+
+    <div class="contain">
+        <h2>SIGN UP</h2>
+
+        {% if form.errors %}
+        <div class="error-messages">
+            <strong>Please correct the following:</strong>
+            <ul>
+                {% for field, errors in form.errors.items %}
+                    {% for error in errors %}
+                        <li>{{ error }}</li>
+                    {% endfor %}
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+
+        <form method="POST">
+            {% csrf_token %}
+            <input type="text" name="username" placeholder="Username" class="text3" required>
+            <input type="email" name="email" placeholder="Email" class="text3" required>
+            <input type="password" name="password" placeholder="Password" class="text3" required>
+            <input type="password" name="cpassword" placeholder="Confirm Password" class="text3" required>
+
+            <button type="submit">Register</button>
+        </form>
+
+        <a href="{% url 'login' %}">Already have an account? Login</a>
+    </div>
+</body>
+</html>

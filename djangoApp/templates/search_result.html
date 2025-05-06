@@ -1,0 +1,104 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block main_block %}
+<title>Search Results for "{{ query }}"</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+        text-align: center;
+    }
+    #search-results-container {
+        margin-top: 100px;
+        padding: 20px;
+    }
+    h1 {
+        color: #333;
+        padding: 20px;
+    }
+    #results-list {
+        list-style-type: none;
+        padding: 0;
+    }
+    .result-item {
+        background: #fff;
+        margin: 10px auto;
+        padding: 15px;
+        width: 80%;
+        max-width: 500px;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        justify-content: space-between;
+    }
+    .result-item img {
+        max-width: 80px;
+        height: auto;
+        border-radius: 5px;
+    }
+    .result-item .product-details {
+        flex: 1;
+        text-align: left;
+    }
+    .add-to-cart-btn {
+        background-color: #28a745;
+        color: white;
+        padding: 8px 16px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 14px;
+        font-weight: bold;
+        transition: background-color 0.3s ease;
+    }
+    .add-to-cart-btn:hover {
+        background-color: #218838;
+    }
+    #back-link {
+        display: inline-block;
+        margin-top: 20px;
+        padding: 10px 20px;
+        text-decoration: none;
+        background: #146902;
+        color: white;
+        border-radius: 5px;
+        transition: background 0.3s;
+        margin-bottom: 30px;
+    }
+    #back-link:hover {
+        background: #3fc114;
+    }
+    #no-results-message {
+        color: #666;
+    }
+</style>
+
+<div id="search-results-container">
+    <h1>Search Results for "{{ query }}"</h1>
+
+    {% if products %}
+    <ul id="results-list">
+        {% for product in products %}
+        <li class="result-item">
+            {% if product.image %}
+            <img src="{{ product.image.url }}" alt="{{ product.name }}" />
+            {% endif %}
+            <div class="product-details">
+                <strong>{{ product.name }}</strong><br />
+                <span>${{ product.price }}</span>
+            </div>
+            <a href="{% url 'add_to_cart' product.id %}" class="add-to-cart-btn">Add to Cart</a>
+        </li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <p id="no-results-message">No products found for "{{ query }}".</p>
+    {% endif %}
+
+    <a id="back-link" href="{% url 'home' %}">Back to Search</a>
+</div>
+{% endblock %}

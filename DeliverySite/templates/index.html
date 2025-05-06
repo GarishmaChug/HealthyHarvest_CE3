@@ -1,0 +1,322 @@
+{% extends 'base2.html' %}
+
+{% block main_block %}
+<style>
+    :root {
+        --primary: #2e7d32;
+        --primary-light: #60ad5e;
+        --primary-dark: #005005;
+        --secondary: #ff8f00;
+        --light: #f5f5f5;
+        --dark: #212121;
+        --gray: #757575;
+        --white: #ffffff;
+    }
+    
+    body {
+    
+        font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', sans-serif;
+        line-height: 1.7;
+        margin: 0;
+        padding: 0;
+        color: var(--dark);
+        background-color: var(--light);
+     
+    }
+    
+    .container {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 20px;
+        margin-top: 80px;
+     
+    }
+    
+    header {
+        
+        background: linear-gradient(135deg, var(--primary), var(--primary-light));
+        color: var(--white);
+        padding: 80px 20px;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    header::after {
+        content: '';
+        position: absolute;
+        bottom: -50px;
+        left: 0;
+        right: 0;
+        height: 100px;
+        background-color: var(--light);
+        transform: skewY(-2deg);
+        z-index: 1;
+    }
+    
+    h1 {
+        font-size: 3rem;
+        margin-bottom: 20px;
+        font-weight: 700;
+        text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    }
+    
+    header p {
+        font-size: 1.2rem;
+        max-width: 700px;
+        margin: 0 auto 30px;
+        opacity: 0.9;
+    }
+    
+    .cta-button {
+        display: inline-block;
+        background-color: var(--white);
+        color: var(--primary);
+        padding: 15px 32px;
+        text-decoration: none;
+        font-weight: 600;
+        border-radius: 50px;
+        margin-top: 20px;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    
+    .cta-button:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        background-color: var(--light);
+    }
+    
+    section {
+        padding: 80px 20px;
+        position: relative;
+    }
+    
+    .section-title {
+        text-align: center;
+        margin-bottom: 60px;
+        color: var(--primary);
+        font-size: 2.2rem;
+        font-weight: 600;
+        position: relative;
+    }
+    
+    .section-title::after {
+        content: '';
+        display: block;
+        width: 80px;
+        height: 4px;
+        background: var(--secondary);
+        margin: 15px auto 0;
+    }
+    
+    .how-it-works {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 30px;
+        margin-bottom: 40px;
+    }
+    
+    .feature-card {
+        flex: 1;
+        min-width: 300px;
+        background: var(--white);
+        padding: 40px 30px;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        text-align: center;
+    }
+    
+    .feature-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    }
+    
+    .feature-card h3 {
+        color: var(--primary);
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+        position: relative;
+    }
+    
+    .feature-card h3::after {
+        content: '';
+        display: block;
+        width: 40px;
+        height: 3px;
+        background: var(--secondary);
+        margin: 15px auto;
+    }
+    
+    .feature-card p {
+        color: var(--gray);
+        font-size: 1.1rem;
+    }
+    
+    .testimonials-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+        justify-content: center;
+    }
+    
+    .testimonial-card {
+        flex: 1;
+        min-width: 300px;
+        max-width: 400px;
+        background: var(--white);
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        position: relative;
+    }
+    
+    .testimonial-card::before {
+        content: '"';
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        font-size: 4rem;
+        color: var(--primary-light);
+        opacity: 0.2;
+        font-family: Georgia, serif;
+        line-height: 1;
+    }
+    
+    .testimonial-text {
+        font-style: italic;
+        font-size: 1.1rem;
+        color: var(--dark);
+        margin-bottom: 20px;
+        position: relative;
+        z-index: 1;
+    }
+    
+    .testimonial-author {
+        font-weight: 600;
+        color: var(--primary);
+        text-align: right;
+    }
+    
+    .jobs-section {
+        text-align: center;
+        background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+        color: var(--white);
+        padding: 80px 20px;
+        position: relative;
+    }
+    
+    .jobs-section::before {
+        content: '';
+        position: absolute;
+        top: -50px;
+        left: 0;
+        right: 0;
+        height: 100px;
+        background-color: var(--light);
+        transform: skewY(2deg);
+        z-index: 1;
+    }
+    
+    .jobs-section h2 {
+        color: var(--white);
+        margin-bottom: 20px;
+    }
+    
+    .jobs-section p {
+        max-width: 700px;
+        margin: 0 auto 30px;
+        font-size: 1.2rem;
+        opacity: 0.9;
+    }
+    
+    .jobs-button {
+        display: inline-block;
+        background-color: var(--white);
+        color: var(--primary);
+        padding: 15px 32px;
+        text-decoration: none;
+        font-weight: 600;
+        border-radius: 50px;
+        margin-top: 20px;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    
+    .jobs-button:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        background-color: var(--light);
+    }
+    
+    @media (max-width: 768px) {
+        .how-it-works {
+            flex-direction: column;
+        }
+        
+        .feature-card {
+            min-width: 100%;
+        }
+        
+        h1 {
+            font-size: 2.2rem;
+        }
+        
+        header {
+            padding: 60px 20px;
+        }
+    }
+</style>
+<div style="height: 80px;"></div>  <!-- Pushes header below fixed navbar -->
+
+<header>
+
+    <div class="container">
+        <h1>Groceries delivered to your door</h1>
+        <p>Order fresh groceries online and get them delivered to your doorstep in no time.</p>
+        <a href="#" class="cta-button">Start Shopping</a>
+    </div>
+</header>
+
+<section class="container">
+    <h2 class="section-title">How It Works</h2>
+    <div class="how-it-works">
+        <div class="feature-card">
+            <h3>For Customers</h3>
+            <p>Shop from a wide variety of stores and have your groceries delivered by our reliable shoppers. Enjoy fresh produce at your convenience.</p>
+        </div>
+        <div class="feature-card">
+            <h3>For Shoppers</h3>
+            <p>Join our team of delivery drivers, set your own hours, and earn money by delivering groceries to happy customers.</p>
+        </div>
+    </div>
+</section>
+
+<section class="container">
+    <h2 class="section-title">What Our Customers Say</h2>
+    <div class="testimonials-container">
+        <div class="testimonial-card">
+            <p class="testimonial-text">Fast and reliable service! The shopper was very friendly and my groceries arrived right on time.</p>
+            <div class="testimonial-author">- Sarah M.</div>
+        </div>
+        <div class="testimonial-card">
+            <p class="testimonial-text">I love how easy it is to order. The produce is always fresh and the delivery is super quick!</p>
+            <div class="testimonial-author">- James T.</div>
+        </div>
+        <div class="testimonial-card">
+            <p class="testimonial-text">As a busy parent, this service has been a lifesaver. I can't imagine going back to regular grocery shopping.</p>
+            <div class="testimonial-author">- Priya K.</div>
+        </div>
+    </div>
+</section>
+
+<section class="jobs-section">
+    <div class="container">
+        <h2 class="section-title">Delivery Jobs Available</h2>
+        <p>We're hiring delivery drivers across the country. Apply today and start earning money on your own schedule!</p>
+        <a href="{%url 'apply'%}" class="jobs-button">Apply as a Delivery Person</a>
+    </div>
+</section>
+{%endblock%}

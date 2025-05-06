@@ -1,0 +1,115 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms and Conditions</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+        }
+        header {
+            margin-top: 80px;
+            background-color: #343a40;
+            color: #ffffff;
+            padding: 20px;
+            text-align: center;
+        }
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        section {
+            margin-bottom: 20px;
+        }
+        h2 {
+            color: #063404;
+        }
+        p {
+            line-height: 1.6;
+        }
+        footer {
+            background-color: #343a40;
+            color: #ffffff;
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Terms and Conditions</h1>
+    </header>
+    <main>
+        <section>
+            <h2>1. Introduction</h2>
+            <p>Welcome to <strong>HealthyHarvest</strong>. By using our grocery delivery service, you agree to comply with these Terms and Conditions.</p>
+        </section>
+        
+        <section>
+            <h2>2. Eligibility</h2>
+            <p>You must be at least 18 years old to use our services.</p>
+        </section>
+        
+        <section>
+            <h2>3. Account Registration</h2>
+            <p>To place an order, you may need to create an account and maintain the confidentiality of your credentials.</p>
+        </section>
+        
+        <section>
+            <h2>4. Orders and Payments</h2>
+            <p>All orders are subject to availability. Payments must be made via accepted payment methods.</p>
+        </section>
+        
+        <section>
+            <h2>5. Delivery</h2>
+            <p>Delivery times are estimated and not guaranteed. Customers must be available to receive the order.</p>
+        </section>
+        
+        <section>
+            <h2>6. Returns and Refunds</h2>
+            <p>Refund requests must be submitted within a specific time frame, subject to our refund policy.</p>
+        </section>
+        
+        <section>
+            <h2>7. Cancellations</h2>
+            <p>Orders can be canceled before processing. Once dispatched, cancellations are not allowed.</p>
+        </section>
+        
+        <section>
+            <h2>8. Prohibited Activities</h2>
+            <p>Users must not engage in fraudulent activities or misuse our service.</p>
+        </section>
+        
+        <section>
+            <h2>9. Limitation of Liability</h2>
+            <p>We are not responsible for indirect or consequential damages from service use.</p>
+        </section>
+        
+        <section>
+            <h2>10. Changes to Terms</h2>
+            <p>We reserve the right to update these Terms and Conditions at any time.</p>
+        </section>
+        
+        <section>
+            <h2>11. Contact Information</h2>
+            <p>For inquiries, please contact us at <strong>[Your Contact Email or Phone Number]</strong>.</p>
+        </section>
+    </main>
+</body>
+</html>
+
+{% endblock %}

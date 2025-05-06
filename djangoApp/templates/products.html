@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HealthyHarvest</title>
+    <style>
+        /* Main Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 100%;
+            margin-top: 50px;
+            margin-left: 40px;
+            margin-right: 40px;
+            padding: 20px;
+        }
+
+        /* Header Styles */
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            color: #2e8b57;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .search-bar {
+            margin: 20px auto;
+            width: 80%;
+            max-width: 600px;
+        }
+
+        .search-bar input {
+            width: 100%;
+            padding: 12px 20px;
+            border: 1px solid #ddd;
+            border-radius: 30px;
+            font-size: 1rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        /* Product Grid */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 10px;
+            border: 1px solid #ddd;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+            padding: 15px;
+            text-align: center;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .product-image {
+            height: 150px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+        }
+
+        .product-image img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        .product-info {
+            padding: 10px;
+        }
+
+        .product-price {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #2e8b57;
+            margin: 5px 0;
+        }
+
+        .product-name {
+            font-size: 1.1rem;
+            margin: 10px 0;
+            color: #333;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .add-to-cart {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            width: 100%;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s;
+            margin-top: 10px;
+        }
+
+        .add-to-cart:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>HealthyHarvest</h1>
+            <div class="search-bar">
+                <input type="text" placeholder="Search Products and Stores">
+            </div>
+        </div>
+
+        <!-- Product Grid -->
+        <div class="product-grid">
+            <!-- Product Cards -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="static/images/maggi.png" alt="Maggi Noodles">
+                </div>
+                <div class="product-info">
+                    <div class="product-price">$0.12</div>
+                    <div class="product-name">Maggi Noodles</div>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="static/images/tedhemedhe.png" alt="Teche Meche">
+                </div>
+                <div class="product-info">
+                    <div class="product-price">$0.12</div>
+                    <div class="product-name">Teche Meche</div>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="static/images/Bluelays.png" alt="Lays Magic Masala">
+                </div>
+                <div class="product-info">
+                    <div class="product-price">$0.12</div>
+                    <div class="product-name">Lays Magic Masala</div>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="static/images/Yellowlays.png" alt="Lays Classic Salted">
+                </div>
+                <div class="product-info">
+                    <div class="product-price">$0.12</div>
+                    <div class="product-name">Lays Classic Salted</div>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="static/images/GreenLays.png" alt="Lays Cream & Onion">
+                </div>
+                <div class="product-info">
+                    <div class="product-price">$0.12</div>
+                    <div class="product-name">Lays Cream & Onion</div>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="static/images/cheese.png" alt="Maggi Cheese Pasta">
+                </div>
+                <div class="product-info">
+                    <div class="product-price">$0.42</div>
+                    <div class="product-name">Maggi Cheese Pasta</div>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="static/images/masala.png" alt="Maggi Masala Pasta">
+                </div>
+                <div class="product-info">
+                    <div class="product-price">$0.42</div>
+                    <div class="product-name">Maggi Masala Pasta</div>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="static/images/oreo.png" alt="Oreo Cookies">
+                </div>
+                <div class="product-info">
+                    <div class="product-price">$0.12</div>
+                    <div class="product-name">Oreo Cookies</div>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

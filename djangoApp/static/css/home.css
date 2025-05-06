@@ -1,0 +1,221 @@
+#hero{
+    height: 230px;
+    display: flex;
+    flex-direction: row-reverse;
+    background-color: rgb(8, 60, 8);
+  
+    align-items: center;
+
+}
+#hero-image{
+  
+    height: 200px;
+    width: 500px;
+  
+    margin-right: 330px;
+}
+#hero-text h3{
+    font-size: 30px;
+    color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin-bottom: 15px;
+}
+#hero-div2{
+    margin-right: 200px;
+    margin-bottom: 40px;
+    
+}
+#hero-button button{
+   color: white;
+   font-size: 20px;
+   font-weight: 400;
+   border-radius: 30px;
+   width: 300px;
+   height: 50px;
+   background-color: green;
+   border: none;
+   margin-top: 0px;
+}
+
+#hero-button button:hover{
+    background-color: rgb(3, 36, 3);
+}
+
+
+#nav2{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 40px;
+    align-items: center;
+    margin-bottom: 40px;
+}
+#nav2 a{
+    /* border: 2px solid black; */
+    text-align: center;
+    border-radius: 30px;
+    width: 120px;
+    height: 40px;
+    padding-top: 7px;
+    text-decoration: none;
+    background-color: rgb(205, 202, 202);
+    color: black;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+    font-size: 20px;
+   
+}
+
+#nav2 a:hover{
+    background-color: grey;
+    transition: 0.2s;
+    transform: scaleX(1.1);
+    
+}
+#main-cart{
+display: flex;
+/* justify-content: space-between; This will add space between the items */
+gap: 80px; /* Adds a gap between the items, you can adjust as needed */
+flex-wrap: wrap;
+padding-left: 160px;
+
+}
+.sub-cart1{
+    background-image: url(../images/beauty.jpg);
+    width: 280px;
+    height: 180px;
+    border-radius: 7px;
+}
+.sub-cart2{
+    background-image: url(../images/pharmacy2.jpg);
+    width: 280px;
+    height: 180px;
+    border-radius: 7px;
+}
+
+.sub-cart3{
+    background-image: url(../images/sweets.jpg);
+    width: 270px;
+    height: 180px;
+    border-radius: 7px;
+}
+.sub-cart3 p{
+    margin-left: 100px;
+
+}
+.sub-cart1 p{
+    padding-left: 10px;
+}
+
+.sub-cart2 p{
+    padding-left: 5px;
+}
+#hero2{
+    display:flex;
+    gap: 10px;
+    margin-left: 60px;
+    margin-right: 60px;
+    margin-bottom: 30px;
+    margin-top: 10px;
+    justify-content: space-around;
+}
+.hero3{
+    height:470px;
+    border-radius: 30px;
+    width: 410px;
+    background-color: rgb(232, 231, 231);
+}
+.hero3 img{
+    width: 400px;
+    height: 300px;
+    border-top-left-radius:30px ;
+    border-top-right-radius: 30px;
+    padding-left: 4px;
+    padding-top: 4px;
+}
+.hero2-te{
+    padding-left: 20px;
+    padding-right: 20px;
+     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.hero2-te p{
+    font-size: 17px;
+}
+#text{
+    text-align: center;
+    margin-top: 100px;
+}
+
+.main-img{
+    height: 800px;
+    width: 1200px;
+    margin: auto;
+    
+}
+.main-img img{
+    height: 350px;
+    width: 1200px;
+    border-radius: 30px;
+}
+h1{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+}
+
+.blocks{
+    display: flex;
+    height: 450px;
+    gap: 8px;
+    justify-content: center;
+    
+}
+
+.sub-block{
+    width: 295px;
+    height: 295px;
+    border-radius: 20px;
+    background-color: rgb(233, 232, 232);
+    margin-top: 20px;
+}
+.sub-block h2{
+    text-align: left;
+    font-size: 40px;
+    margin-left: 20px;
+}
+.sub-block p{
+    text-align: left;
+    font-size: 28px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+#text1{
+    margin-top: 100px;
+}
+
+#new{
+    display: flex;
+    height: 250px;
+    overflow-x: auto; /* Enables horizontal scrolling */
+    white-space: nowrap; /* Keeps items in a single line */
+    max-width: 4000px; 
+    margin-top: 20px;
+    gap: 10px;
+}
+#new-arrival{
+    height: 250px;
+    margin-left: 10px;
+}
+#new img{
+    width: 150px;
+    height: 150px;
+    border: 2px solid grey;
+    border-radius: 15px;
+}
+#best{
+   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   margin-left: 10px;
+   font-size: 30px;
+   margin-top: 70px;
+}
+#new{
+    background-color: rgb(235, 240, 235);
+    padding-top: 70px;
+    }
