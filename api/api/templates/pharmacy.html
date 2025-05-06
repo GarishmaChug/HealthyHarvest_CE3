@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pharmacy Products</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="../static/css/pharmacy.css">
+</head>
+<body>
+    {% extends 'base.html' %}
+    {% block content %}
+    <h1>Pharmacy Products</h1>
+    <section class="product-section">
+        {% for product in products %}
+        <div class="product-card">
+            <img src="{{ product.image }}" alt="{{ product.name }}" style="width:200px;height:250px;">
+            <p>$ {{ product.price }}</p>
+            <p id="tag">{{ product.name }}</p>
+            <p>Expiry: {{ product.expiry }}</p>
+          
+        <form action="{{ url_for('add_to_cart', product_id=product.id) }}" method="POST">
+            <button type="submit" id="but" >Add to Cart</button>
+        </form>
+        </div>
+        {% endfor %}
+    </section>
+    {% endblock %}
+</body>
+</html>

@@ -1,0 +1,95 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    /* background-color: #f4f4f4; */
+    background-color: white;
+}
+
+.product-section {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 20px 0;
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+.product-card {
+    background-color: white;
+    padding: 20px;
+    width: 250px; 
+    margin: 10px;
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+
+}
+
+.product-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.product-card h2 {
+    margin: 15px 0;
+    font-size: 1.5rem;
+}
+
+.product-card p {
+    margin-bottom: 15px;
+    margin-top: 5px;
+    /* font-size: 1.2rem; */
+}
+
+.product-card button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 5px;
+    width: 130px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    border-radius: 5px;
+}
+
+.product-card button:hover {
+    background-color: #218838;
+}
+
+.product-card img {
+    width: 138px;  /* Makes the width stretch to 100% of its parent */
+    height: 138px; /* Fixed height to ensure uniform size */
+    /* object-fit: cover; Ensures the image maintains aspect ratio and fills the space without distortion */
+    border-radius: 5px;
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+/* .product-card button {
+    padding: 10px; Consistent padding
+    width: 130px;  Fixed width
+    height: 40px;  Fixed height to make the button's size consistent
+}
+
+.product-card {
+    height: 400px; Fixed height for uniform card size
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+} */

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+    <link rel="stylesheet" href="../static/css/checkout.css">
+</head>
+<body>
+    {%extends 'base.html'%}
+    {%block content%}
+    <div class="checkout-container">
+        <h1>Secure Checkout</h1>
+        
+        <div class="progress-bar">
+            <span>Step 1: Shipping</span>
+            <span>Step 2: Billing</span>
+            <span>Step 3: Payment</span>
+            <span>Step 4: Review</span>
+        </div>
+        
+        <form action="process_checkout.php" method="post">
+            <section id="shipping-info">
+                <h2>Shipping Information</h2>
+                <input type="text" name="full_name" placeholder="Full Name" required>
+                <input type="email" name="email" placeholder="Email Address" required>
+                <input type="text" name="phone" placeholder="Phone Number" required>
+                <input type="text" name="address" placeholder="Shipping Address" required>
+                <input type="text" name="city" placeholder="City" required>
+                <input type="text" name="state" placeholder="State" required>
+                <input type="text" name="zip" placeholder="Zip Code" required>
+                <input type="text" name="country" placeholder="Country" required>
+            </section>
+            
+            <section id="payment-info">
+                <h2>Payment Details</h2>
+                <input type="text" name="card_name" placeholder="Cardholder Name" required>
+                <input type="text" name="card_number" placeholder="Card Number" required>
+                <input type="text" name="expiry" placeholder="Expiration Date (MM/YY)" required>
+                <input type="text" name="cvv" placeholder="CVV" required>
+                <p>All transactions are secure and encrypted.</p>
+            </section>
+            
+            <section id="discount">
+                <h2>Promo Code</h2>
+                <input type="text" name="promo_code" placeholder="Enter Promo Code">
+                <button type="button">Apply</button>
+            </section>
+            
+            <section id="review">
+                <input type="checkbox" required> I agree to the <a href="#">Terms and Conditions</a>
+                <button type="submit" class="place-order">Place Order</button>
+            </section>
+        </form>
+        
+       
+    </div>
+    {%endblock%}
+</body>
+</html>

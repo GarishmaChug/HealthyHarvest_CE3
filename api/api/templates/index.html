@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../static/css/index.css">
+</head>
+<body>
+    {%extends 'base.html'%}
+    {%block content%}
+    
+
+    <main>
+        <div id="hero">
+            <div id="hero-image">  <img src="../static/images/heroimage.png" alt=""></div>
+            <div id="hero-div2">
+                
+                <div id="hero-text"><h3>Order groceries for <br>delivery or pickup today</h3>
+
+                </div>
+                <div id="hero-button"><button>Sign up for 3 free deliveries</button></div>
+            </div>
+        </div>
+        <h2 id="best"> BESTSELLERS</h2>
+        <div id="new">
+        <div id="new-arrival">
+          <img src="../static/images/product5.jpeg" alt="">
+        </div>
+        <div id="new-arrival">
+            <img src="../static/images/DarkFantasy.png" alt="">
+        </div>
+        <div id="new-arrival">
+            <img src="../static/images/product20.jpeg" alt="">
+        </div>
+        <div id="new-arrival">
+            <img src="../static/images/product9.jpeg" alt="">
+        </div>
+        <div id="new-arrival">
+            <img src="../static/images/product10.jpeg" alt="">
+        </div>
+        <div id="new-arrival">
+            <img src="../static/images/crispello.png" alt="">
+        </div>
+        <div id="new-arrival">
+            <img src="../static/images/kiwi.png" alt="">
+        </div>
+        <div id="new-arrival">
+            <img src="../static/images/eyedrops.jpg" alt="">
+        </div>
+        <div id="new-arrival">
+            <img src="../static/images/dragonfruit.png" alt="">
+        </div>
+        <div id="new-arrival">
+            <img src="../static/images/product6.jpeg" alt="">
+        </div>
+        <div id="new-arrival">
+            <img src="../static/images/hearts.png" alt="">
+        </div>
+    </div>
+
+    </div>
+
+    </div>
+        <div id="nav2">
+            <a href="#">All</a>
+            <a href="{{url_for('snacks')}}">Snacks</a>
+            <a href="{{url_for('fruits')}}">Grocery</a>
+            <a href="{{url_for('pharmacy')}}">Pharmacy</a>
+            <a href="{{url_for('beauty')}}">Beauty</a>
+        </div>
+        <h1 id="text">Grocery delivery you can count on</h1>
+        <div id="hero2">
+           <div class="hero3">
+            <div class="hero2-img">
+                <img src="../static/images/hero23.webp" alt="">
+            </div>
+            <div class="hero2-te">
+                <h2>Choose what you want</h2>
+                <p>Select items from your favourite grocery stores at HealthyHarvest.com or in the app.</p>
+            </div>
+           </div>
+           <div class="hero3">
+            <div class="hero2-img">
+                <img src="../static/images/hero22.webp" alt="">
+            </div>
+            <div class="hero2-te">
+                <h2>See real-time updates</h2>
+                <p>Personal shoppers pick items with care.Chat as they shop and manage your order</p>
+            </div>
+           </div>
+           <div class="hero3">
+            <div class="hero2-img">
+                <img src="../static/images/hero21.webp" alt="">
+            </div> 
+            <div class="hero2-te">
+                <h2>Get your items same-day</h2>
+                <p>Pick a convenient time for you. Enjoy HealthyHarvest's 100% quality guarantee on every order</p>
+            </div>
+           </div>
+        </div>
+        <h1 id="text1">The largest online grocery marketplace in North America</h1>
+        <div class="main-img">
+            <img src="../static/images/ss.png" alt="">
+        
+        <div class="blocks">
+            <div class="sub-block">
+                <h2>1 Billion products</h2>
+                <p>available to shop across the <br> catalog </p>
+            </div>
+            <div class="sub-block">
+                <h2>80,000 <br>stores</h2>
+                <p>from local grocers to chain stores</p>
+            </div>
+            <div class="sub-block">
+                <h2>14,000 <br>cities</h2>
+                <p>served across the U.S & Canada</p>
+            </div>
+            <div class="sub-block">
+                <h2>Million of Orders</h2>
+                <p>delivered or picked up yearly</p>
+            </div>
+        </div>
+    </div>
+
+    </main>
+
+    {%endblock %}
+</body>
+</html>

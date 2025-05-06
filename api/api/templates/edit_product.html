@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Product</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+
+    <style>
+        #edit-product-form {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f9f9f9;
+        }
+        #edit-product-form .card {
+            max-width: 500px;
+            margin: auto;
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+        #edit-product-form h2 {
+            color: #444;
+        }
+        #edit-product-form .form-control,
+        #edit-product-form .form-control-file,
+        #edit-product-form .form-group select {
+            border-color: #ccc;
+        }
+        #edit-product-form .btn-primary {
+            background-color: #054209;
+            border-color: #358f4a;
+        }
+        #edit-product-form .btn-primary:hover {
+            background-color: #116c1f;
+            border-color: #033411;
+        }
+        #edit-product-form .btn-secondary {
+            background-color: #e0e0e0;
+            border-color: #e0e0e0;
+            color: #333;
+        }
+        #edit-product-form .btn-secondary:hover {
+            background-color: #bdbdbd;
+            border-color: #bdbdbd;
+            color: #000;
+        }
+        #edit-product-form img {
+            border-radius: 4px;
+            border: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+{% extends 'base.html' %}
+
+{% block content %}
+<div id="edit-product-form" class="container mt-4">
+    <div class="card p-4 shadow-sm">
+        <h2 class="mb-4 text-center">Edit Product</h2>
+        <form method="POST" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="name">Product Name</label>
+                <input type="text" class="form-control" id="name" name="name" value="{{ product.name }}" required>
+            </div>
+            <div class="form-group">
+                <label for="price">Price</label>
+                <input type="text" class="form-control" id="price" name="price" value="{{ product.price }}" required>
+            </div>
+            <div class="form-group">
+                <label for="category">Category</label>
+                <select class="form-control" id="category" name="category" required>
+                    <option value="beauty" {% if product.category == 'beauty' %}selected{% endif %}>Beauty</option>
+                    <option value="pharmacy" {% if product.category == 'pharmacy' %}selected{% endif %}>Pharmacy</option>
+                    <option value="fruits" {% if product.category == 'fruits' %}selected{% endif %}>Fruits & Vegetables</option>
+                    <option value="snacks" {% if product.category == 'snacks' %}selected{% endif %}>Snacks</option>
+                    <option value="other" {% if product.category == 'other' %}selected{% endif %}>Other Grocery</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="image">Product Image</label>
+                {% if product.image %}
+                <div class="mb-2">
+                    <img src="{{ url_for('static', filename=product.image) }}" alt="{{ product.name }}" style="width: 100px;">
+                    <p class="small text-muted">Current: {{ product.image }}</p>
+                </div>
+                {% endif %}
+                <input type="file" class="form-control-file" id="image" name="image">
+            </div>
+            <div class="form-group">
+                <label for="description">Description</label>
+                <textarea class="form-control" id="description" name="description" rows="3">{{ product.description }}</textarea>
+            </div>
+            <div class="d-flex justify-content-between">
+                <button type="submit" class="btn btn-primary">Update</button>
+                <a href="{{ url_for('admin_dashboard') }}" class="btn btn-secondary">Cancel</a>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}
+</body>
+</html>

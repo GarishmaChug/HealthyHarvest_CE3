@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/snacks.css">
+    <title>Snacks</title>
+</head>
+
+<body>
+    {%extends 'base.html'%}
+    {%block content%}
+    <section class="product-section">
+        {% for product in products %}
+        <div class="product-card">
+            <img src="{{ product.image }}" alt="{{ product.name }}">
+            <p>$ {{ product.price }}</p>
+            <p>{{ product.name }}</p>
+            
+
+             
+        <form action="{{ url_for('add_to_cart', product_id=product.id) }}" method="POST">
+            <button type="submit" id="but" >Add to Cart</button>
+        </form>
+            </form>
+        </div>
+        {% endfor %}
+    </section>
+    {%endblock%}
+</body>
+</html>

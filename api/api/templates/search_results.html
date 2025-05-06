@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results for "{{ query }}"</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+        #search-results-container {
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+            padding: 20px;
+        }
+        #results-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        .result-item {
+            background: #fff;
+            margin: 10px auto;
+            padding: 15px;
+            width: 80%;
+            max-width: 500px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            
+        }
+        .result-item img {
+            max-width: 80px;
+            height: auto;
+            border-radius: 5px;
+        }
+        #back-link {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            text-decoration: none;
+            background: #146902;
+            color: white;
+            border-radius: 5px;
+            transition: background 0.3s;
+            margin-bottom: 30px;
+        }
+        #back-link:hover {
+            background: #3fc114;
+        }
+        #no-results-message {
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    {%extends 'base.html'%}
+    {%block content%}
+    <div id="search-results-container">
+        <h1>Search Results for "{{ query }}"</h1>
+
+        {% if results %}
+        <ul id="results-list">
+            {% for product in results %}
+                <li class="result-item">
+                    <img src="{{ url_for('static', filename='images/' + product['image']) }}" alt="{{ product['name'] }}">
+                    <strong>{{ product['name'] }}</strong> - {{ product['price'] }}
+                </li>
+            {% endfor %}
+        </ul>
+        {% else %}
+        <p id="no-results-message">No products found for "{{ query }}".</p>
+        {% endif %}
+
+        <a id="back-link" href="{{ url_for('home') }}">Back to Search</a>
+        {%endblock%}
+    </div>
+</body>
+</html>
